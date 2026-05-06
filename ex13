@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cmath> 
+using namespace std;
+
+int main() {
+    int N;
+
+    cout << "Digite a quantidade de dias: ";
+    cin >> N;
+
+    float temp[N];
+    float soma = 0;
+
+    for(int i = 0; i < N; i++) {
+        cout << "Temperatura do dia " << i + 1 << ": ";
+        cin >> temp[i];
+        soma += temp[i];
+    }
+
+    float media = soma / N;
+
+    float somaQuadrados = 0;
+    for(int i = 0; i < N; i++) {
+        float diferenca = temp[i] - media;
+        somaQuadrados += diferenca * diferenca; 
+    }
+
+    float desvioPadrao = sqrt(somaQuadrados / (N - 1));
+
+    cout << "\nMedia: " << media << endl;
+    cout << "Desvio padrao: " << desvioPadrao << endl;
+
+    return 0;
+}
