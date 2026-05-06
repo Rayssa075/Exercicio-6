@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+int main ( ) {
+    int v[15];
+     for (int i =0; i<15; i++){
+         cout <<"Digite o valor do v ["<<i<<"] ";
+         cin >> v[i];
+     }
+     cout<<endl;
+     
+     cout << "Os valores digitados, foram:";
+      for (int i =0; i<15; i++){
+         cout << v[i] <<" ";
+      }
+      cout<<endl;
+      
+    
+    cout << "Numeros iguais a 30: ";
+    bool encontrou = false;
+     for (int i =0; i<15; i++){
+         if ( v[i] == 30 ){
+             cout << i << " ";
+             encontrou = true;
+         }
+     }
+      cout<<endl;
+     
+     if (!encontrou){
+         cout << "Nenhum numero 30 foi encontrado";
+     }
+      cout<<endl;
+     
+     return 0;
+    }
