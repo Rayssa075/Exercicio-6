@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+int main ( ) {
+    int v[7];
+     for (int i =0; i<7; i++){
+         cout <<"Digite o valor do v ["<<i<<"] ";
+         cin >> v[i];
+     }
+     cout<<endl;
+     
+     cout << "Os valores digitados, foram:";
+      for (int i =0; i<7; i++){
+         cout << v[i] <<" ";
+      }
+      cout<<endl;
+      
+    
+    cout << "Numeros Multiplos de 2: ";
+     for (int i =0; i<7; i++){
+         if ( v[i] % 2 ==0){
+             cout << v[i]<< " ";
+         }
+     }
+     cout<<endl;
+    
+    cout << "Numeros Muliplos de 3: ";
+     for (int i =0; i<7; i++){
+         if ( v[i] % 3 ==0){
+             cout << v[i]<< " ";
+         }
+     }
+     cout<<endl;
+     
+     cout << "Numeros Muliplos de 2 e de 3 : ";
+     for (int i =0; i<7; i++){
+         if ( v[i] % 2 ==0 && v[i] % 3 ==0){
+             cout << v[i]<< " ";
+         }
+     }
+     cout<<endl;
+     
+    return 0;
+     }
