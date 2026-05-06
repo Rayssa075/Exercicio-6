@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main() {
+    string vn[8];
+    int vq[8];
+    
+cout<<"Insira os nomes dos clientes: ";
+
+  for(int i=0; i<8; i++){
+    cin>> vn[i];
+   }
+
+cout<<"Insira o numero de DVDs locado por cada cliente: ";
+   for(int i=0; i<8; i++){
+       cin>> vq[i];
+   }
+   
+   for(int i=0; i<8; i++){
+       int gratis = vq[i]/10;
+       cout<<"os clientes " <<vn[i]<< " tendo " <<gratis<< " locaçoes"<<endl;
+   }
+    return 0;
+}
