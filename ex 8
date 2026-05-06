@@ -16,7 +16,7 @@ int main ( ) {
       
       int B[5];
      for (int i =0; i<5; i++){
-         cout <<"Digite o valor do vetor A   ["<<i<<"] ";
+         cout <<"Digite o valor do vetor B  ["<<i<<"] ";
          cin >> B[i];
      }
      cout<<endl;
@@ -25,9 +25,22 @@ int main ( ) {
       for (int i =0; i<5; i++){
          cout << B[i] <<" ";
       }
+      cout << endl;
+      
+     int acumulador = 0;
+     for (int i =0; i<5; i++){
+         int posicaoB = 4 - i;
+         int subtracao = A[i] - B[posicaoB];
+         
+         cout << " A ["<<i<<"] - B[" <<posicaoB<<"]→: ";
+         cout << A[i]<< "-" <<B[posicaoB]<< "=" <<subtracao << endl;
+         
+         acumulador = acumulador + subtracao;
+     }
+     
       cout<<endl;
       
-      
+      cout << "Resultado final acumulado:" << acumulador <<  endl;
     
     
      return 0;
