@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+int main() {
+    
+int v[20];
+char op;
+
+    cout<<" Insira os valores do vetor: ";
+    
+    for(int i=0; i<20; i++){
+        cin>>v[i];
+    }
+    
+    do{
+     cout<<"Digite a opção de sua escolha: "<<endl;
+     cout<<"a- Saber em qual posição esta armazenado um valor"<<endl;
+     cout<<"b- Alterar o valor de alguma posição" <<endl;
+     cout<<"c- Imprimir o vetor" <<endl;
+     cout<<"d- Sair" <<endl;
+     cin>>op;
+    
+     if(op=='a'){
+        int valor;
+        cout<<"Insira o valor que procura: ";
+        cin>>valor;
+        bool achou = false;
+        for(int i=0; i<20; i++){
+            if(v[i]==valor){
+             cout<<"encontrado na posição" <<i<< endl;
+             achou = true;
+            }
+        }
+        if(!achou){
+            cout<<"Valor invalido" <<endl;
+        }
+     }
+     if(op=='b'){
+        int posicao, valor;
+        cout<<"Qual a posição desejada? ";
+        cin>>posicao;
+        if(posicao>=0 && posicao<20){
+        cout<<"Insira o novo valor: ";
+        cin>> valor;
+        cout<<"V [" <<posicao<< "] tem o valor " <<valor<<endl;
+        }else{
+            cout<<"Posição invalida"<<endl;
+        }
+     }
+    
+     if(op=='c'){
+        cout<<"vetor: ";
+        for(int i=0; i<20; i++){
+            cout<<v[i]<< " "<<endl;
+        }
+     }
+     if(op=='d'){
+         cout<<"Saindo...";
+     }
+     }while(op !='d');
+     return 0;
+}
