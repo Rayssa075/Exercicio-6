@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int di(int v[], int n, int A, int B) {
+    for(int i = 0; i < n; i++) {
+        if(v[i] < A || v[i] > B) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int main() {
+    int v[5] = {3, 5, 7, 4, 6};
+    int A = 3, B = 7;
+
+    if(di(v, 5, A, B) == 1)
+        cout << "Todos estao no intervalo";
+    else
+        cout << "Nem todos estao no intervalo";
+
+    return 0;
+}
