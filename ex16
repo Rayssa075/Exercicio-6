@@ -1,0 +1,20 @@
+#include <iostream>
+#include <stdlib.h> 
+using namespace std;
+
+int main() {
+    int v[100], i;
+
+    for(i = 0; i < 100; i++) {
+        v[i] = rand() % 100;
+    }
+
+    for(i = 0; i < 100; i++) {
+        if(v[i] > 50) {
+            cout << "Posicao " << i 
+                 << " -> " << v[i] << endl;
+        }
+    }
+
+    return 0;
+}
