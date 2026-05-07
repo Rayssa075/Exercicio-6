@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int codigos[10], estoque[10];
+    int codCliente, codProduto, qtdDesejada;
+
+    // 1. Inicializando o Estoque
+    for (int i = 0; i < 10; i++) {
+        cout << "Digite o codigo do produto " << i + 1 << ": ";
+        cin >> codigos[i];
+        cout << "Digite a quantidade em estoque: ";
+        cin >> estoque[i];
+    }
+
+    // 2. Processamento de Pedidos
+    cout << "\n--- Sistema de Vendas (Cliente 0 para sair) ---" << endl;
+    cout << "Codigo do Cliente: ";
+    cin >> codCliente;
+
+    while (codCliente != 0) {
+        cout << "Codigo do Produto: ";
+        cin >> codProduto;
+        cout << "Quantidade: ";
+        cin >> qtdDesejada;
+
+        bool encontrado = false;
+
+        // Busca o produto no vetor
+        for (int i = 0; i < 10; i++) {
+            if (codigos[i] == codProduto) {
+                encontrado = true;
+
+                // Verifica se tem estoque suficiente
+                if (estoque[i] >= qtdDesejada) {
+                    estoque[i] -= qtdDesejada; // Atualização do estoque
+                    cout << "Pedido atendido. Obrigado e Volte sempre!" << endl;
+                } else {
+                    cout << "Nao temos estoque suficiente desta mercadoria." << endl;
+                }
+                break; // Sai do for, pois já achou o produto
+            }
+        }
+
+        if (!encontrado) {
+            cout << "Codigo inexistente." << endl;
+        }
+
+        cout << "\nProximo pedido - Codigo do Cliente: ";
+        cin >> codCliente;
+    }
+
+    // 3. Relatório Final
+    cout << "\n--- Estoque Atualizado ---" << endl;
+    for (int i = 0; i < 10; i++) {
+        cout << "Produto " << codigos[i] << " | Estoque: " << estoque[i] << endl;
+    }
+
+    return 0;
+}
